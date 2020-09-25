@@ -1,4 +1,16 @@
-CREATE DATABASE company;
+CREATE DATABASE dept;
+
+CREATE TABLE employee(
+    id INT SERIAL PRIMARY KEY,
+    name VARCHAR(40),
+    username VARCHAR(40),
+    birth_day DATE,
+    sex VARCHAR(1),
+    salary INT
+
+)
+
+/*CREATE DATABASE company;
 
 CREATE TABLE employee(
 
@@ -15,3 +27,4 @@ INSERT INTO employee(emp_id, fname, lname, birth_day, sex, salary)
     ('2', 'BASILIS' , 'PAPADOPOULOS' , '1995-07-20' , 'M' , '13000'),
     ('3', 'GEORGIOS' , 'ANDREOU' , '1982-09-12' , 'M' , '15000'),
     ('4', 'XARIS' , 'TANIDIS' , '1988-05-01' , 'M' , '14000');
+    */
