@@ -51,6 +51,9 @@ const AddEmployee = (props) => {
       <input
         type="text"
         name="birthday"
+        data-parse="date"
+        placeholder="MM/DD//YYYY"
+        pattern="\d{2}\/\d{2}/\d{4}"
         value={user.birthday}
         onChange={handleInputChange}
       />
