@@ -4,8 +4,6 @@ import ListEmployee from "./components/ListEmployee";
 import AddEmployee from "./components/AddEmployee";
 import EditEmployee from "./components/EditEmployee";
 
-//components
-
 const App = () => {
   const usersData = [
     {
@@ -35,7 +33,7 @@ const App = () => {
   ];
 
   const [users, setUsers] = useState(usersData);
-  const [editing, setEditing] = useState(false);
+  const [editing, setEditing] = useState(false); //edit mode
 
   const initialFormState = {
     id: null,
@@ -45,15 +43,15 @@ const App = () => {
     sex: "",
     salary: "",
   };
-  const [currentUser, setCurrentUser] = useState(initialFormState);
+  const [currentUser, setCurrentUser] = useState(initialFormState); //see and update who the current user being edited
 
   //crud operations
 
-  //increase user's id serial
   const addUser = (user) => {
-    user.id = users.length + 1;
+    user.id = users.length + 1; //auto-increment user's id
     setUsers([...users, user]);
   };
+  //take the ID of the user and filter them out of the user array
   const deleteUser = (id) => {
     setUsers(users.filter((user) => user.id !== id));
     setEditing(false);
@@ -69,10 +67,12 @@ const App = () => {
       sex: user.sex,
       salary: user.salary,
     });
+    //setCurrentUser(user);
   };
   const updateUser = (id, updatedUser) => {
     setEditing(false);
 
+    //map through the array, and update the user that matches the ID passed through.
     setUsers(users.map((user) => (user.id === id ? updatedUser : user)));
   };
   return (

@@ -8,6 +8,7 @@ const EditEmployee = (props) => {
 
     setUser({ ...user, [name]: value });
   };
+  //in order to change user when you edit someone else
   useEffect(() => {
     setUser(props.currentUser);
   }, [props]);

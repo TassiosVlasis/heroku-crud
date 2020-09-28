@@ -11,6 +11,7 @@ const AddEmployee = (props) => {
   };
   const [user, setUser] = useState(initialFormState);
 
+  //update the state within the form
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
