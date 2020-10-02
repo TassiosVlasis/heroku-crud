@@ -1,8 +1,8 @@
 {
-  "name": "dept",
+  "name": "node-dept-postgres",
   "version": "1.0.0",
   "private": true,
-  "description": "Company API",
+  "description": "RESTful API with Node.js, Express, and PostgreSQL",
   "main": "index.js",
   "engines": {
     "node": "11.x"

@@ -1,8 +1,3 @@
-/*
- * entry point for server
- *
- */
-
 const express = require("express"); //import express
 const bodyParser = require("body-parser");
 const cors = require("cors"); //connect/express middleware
@@ -48,6 +43,7 @@ app
   .post(addEmployee);
 
 // Start server
+
 app.listen(process.env.PORT || 3002, () => {
   console.log(`Server listening`);
 });
