@@ -48,7 +48,7 @@ const addEmployee = (request, response) => {
 
 const updateEmployee = (request, response) => {
   const id = parseInt(request.params.id);
-  const { id, name, username, birth_day, sex, salary } = request.body;
+  const { name, username, birth_day, sex, salary } = request.body;
 
   pool.query(
     "UPDATE employee SET name = $1, username = $2, birth_day = $3, sex = $4, salary = $5 WHERE id = $6",
@@ -78,10 +78,10 @@ app
   // endpoints
   .get(getEmployees)
   .get("/employee/:id", getEmployeeById)
-  .post(addEmployee)
-  .put("/employee/:id", updateEmployee)
-  //.delete("/employee/:id", deleteEmployee);
-  .delete("/:id", deleteEmployee);
+  .post(addEmployee);
+app.put("/employee/:id", updateEmployee);
+app.delete("/employee/:id", deleteEmployee);
+//.delete("/:id", deleteEmployee);
 // Start server
 app.listen(process.env.PORT || 3002, () => {
   console.log(`Server listening`);
