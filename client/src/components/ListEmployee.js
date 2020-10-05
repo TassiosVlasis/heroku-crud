@@ -43,7 +43,7 @@ const ListEmployee = (props) => (
         ))
       ) : (
         <tr>
-          <td colSpan={3}>No users</td>
+          <td colSpan={3}>There aren't employees</td>
         </tr>
       )}
     </tbody>
